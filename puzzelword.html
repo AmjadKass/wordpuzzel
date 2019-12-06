@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>puzzzzzzzzzzzzel</title>
+</head>
+
+<style type="text/css">
+html, body {
+        margin: 0;
+        height: 100%;
+    }
+.container {
+        display: grid;
+        grid-auto-rows: 3em;
+        grid-gap: 0px;
+        grid-template: 1000% 1300%/ 50% 50%;
+        grid-template-areas: 
+        "inp                     inp"
+        "puzzelplace  puzzelsolution" ;
+       
+        min-height: 100%;
+        width: 100%;
+        align-items: center;
+    }
+    
+    #inp {
+        grid-area: inp;
+        background-color: black;
+        text-align: center;
+        border: double;
+    }
+    
+    #puzzelplace {
+        grid-area: puzzelplace;
+        background-color: red;
+        text-align: center;
+        border: double;
+    }
+    
+    #puzzelsolution {
+        grid-area: puzzelsolution;
+        background-color: gray;
+        text-align: center;border: double;
+    }
+
+
+/*@media only screen and (max-width: 768px) {
+    .container {
+        display: grid;
+        grid-auto-rows: 3em;
+        grid-gap: 0px;
+        grid-template: 300% 300% 300% 300% 300%/ 100%;
+        grid-template-areas:
+        "inp" 
+        "puzzelplace" 
+        "puzzelsolution"
+    }
+}/*
+</style>
+
+<body>
+    <center>
+        <div class="container">
+            <div id="inp">
+                <input type="" name="" id="thetextid">
+                <button onclick="myFunction()">start</button>
+            </div>
+            <div id="puzzelplaceid">
+              <ul id="createpuzzelid">
+              </ul>
+            </div>
+            <div id="puzzelsolutionid"> </div>
+        </div>
+    </center>
+</body>
+
+<script type="text/javascript">
+    /*function shuffleArray(texts) {
+        for (var i = texts.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var randomtexts = texts[i];
+            texts[i] = texts[j];
+            texts[j] = randomtexts;
+        }
+    }*/
+     function myFunction() {
+        let text = document.getElementById("thetextid").value;
+
+        // e.g. ["amjad", "ate", "the", "apple"]
+        let texts = text.trim().split(/\s+/).filter(Boolean);
+
+        if (texts.length < 1) {
+          // TODO: add error in page
+          alert("Please enter some words");
+          return;
+        }
+
+        console.log(texts[0]);
+        /* TODO:
+        - add <li> for each text from the list
+        - make it draggable
+        - add field for user to put the dragged word
+        - add check if they succeed or not
+        - show shineg if they pass
+        */
+        texts.sort(function() {
+            return .5 - Math.random();
+        });
+        document.getElementById("puzzelplaceid").innerText = texts;
+        let list = texts.length;
+
+
+        test();
+    }
+
+    function test()
+    {
+        var element = document.createElement("div");
+        element.appendChild(document.createTextNode('The man who mistook his wife for a hat'));
+        document.getElementById('puzzelsolutionid').appendChild(element);
+
+        radioInput = document.createElement('input');
+        radioInput.setAttribute('type', 'radio');
+        radioInput.setAttribute('name', 'test radio inputam');
+        document.getElementById('puzzelsolutionid').appendChild(radioInput)
+        //document.body.appendChild(element);
+    }
+
+
+</script>
+
+</html>

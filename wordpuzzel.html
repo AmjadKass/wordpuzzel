@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+
+<style type="text/css">
+    textarea {
+      resize: none;
+
+}
+        .container {
+            display: grid;
+            grid-auto-rows: 3em;
+            grid-gap: 0px;
+            grid-template: 100% 100% / 50% 50%;
+            height:770px;
+            grid-template-areas:
+            "a  m"
+            ;
+        }
+
+        #m {
+            grid-area: m;
+            background-color: gray;
+            text-align: center;
+        }
+        #a {
+            grid-area: a;
+            background-color: orange;
+            text-align: center;
+        }
+
+
+}
+body{
+    background-image:
+}
+</style>
+
+<body>
+    <center>
+
+        <div class="container">
+
+            <main id="m">
+
+
+            </main>
+
+            <aside id="a">
+            <input id="input" onkeyup="splitInput()">
+            </aside>
+
+        </div>
+    </center>
+</body>
+<script type="text/javascript">
+    
+    let unsplitedText = document.getElementById('input').value;
+    var splitOrNo = eval(unsplitedText)
+    function splitInput() {
+
+      if (true) {lastCharacter.unsplitedText=NaN
+        }
+}
+splitInput(){
+    split("unsplitedText")
+}
+
+</script>
+
+</html>
